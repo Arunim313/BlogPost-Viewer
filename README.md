@@ -1,6 +1,8 @@
 # Blog Post Viewer
 
-A simple blog post viewer built with Next.js, featuring static site generation, API routes, and comprehensive unit testing.
+A simple blog post viewer in Next.js using getStaticProps or getServerSideProps and comprehensive unit testing.
+![image](https://github.com/user-attachments/assets/c45120d5-ca6b-4b64-b181-cb417f7e9eaf)
+
 
 ## Features
 
@@ -35,12 +37,6 @@ A simple blog post viewer built with Next.js, featuring static site generation, 
 └── ...config files
 ```
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 16+ 
-- npm or yarn
 
 ### Installation
 
@@ -61,15 +57,6 @@ npm run dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run test` - Run all tests
-- `npm run test:watch` - Run tests in watch mode
-- `npm run lint` - Run ESLint
 
 ## API Endpoints
 
@@ -93,29 +80,6 @@ Returns a list of blog posts in JSON format.
 }
 ```
 
-## Data Fetching
-
-The `/posts` page uses `getStaticProps` with Incremental Static Regeneration:
-
-- **Revalidation**: Every hour (3600 seconds) for successful requests
-- **Error Handling**: Falls back to empty posts array with 1-minute revalidation
-- **Environment Support**: Automatically switches between development and production URLs
-
-## Testing
-
-The project includes comprehensive unit tests covering:
-
-### Component Tests
-- **PostList**: Tests rendering, click handlers, empty states
-- **PostDetail**: Tests modal behavior, content display, close functionality
-
-### Page Tests
-- **PostsPage**: Tests component integration and state management
-- **getStaticProps**: Tests data fetching logic, error handling, and revalidation
-
-### API Tests
-- **/api/posts**: Tests endpoint behavior, response structure, and error handling
-
 ### Running Tests
 
 ```bash
@@ -129,33 +93,3 @@ npm run test:watch
 npm test -- PostList.test.tsx
 ```
 
-## Technologies Used
-
-- **Next.js 14** - React framework with SSR/SSG
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Utility-first CSS framework
-- **Jest** - Testing framework
-- **React Testing Library** - Component testing utilities
-- **node-mocks-http** - API testing utilities
-
-## Key Features
-
-### Static Site Generation
-- Uses `getStaticProps` for build-time data fetching
-- Implements ISR for automatic revalidation
-- Optimized for performance and SEO
-
-### Component Architecture
-- **PostList**: Displays post titles with excerpts and metadata
-- **PostDetail**: Modal component for full post content
-- Proper separation of concerns and reusability
-
-### Error Handling
-- Graceful fallbacks for API failures
-- User-friendly error states
-- Comprehensive error logging
-
-### Accessibility
-- Semantic HTML structure
-- ARIA labels for interactive elements
-- Keyboard navigation support
